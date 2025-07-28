@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Médico - Clínica Digital</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <div class="admin-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-mini">
+                    <div class="logo-icon">🏥</div>
+                    <span>Clínica Digital</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="medico-inicio.html" class="nav-link active">
+                        <span class="icon">🏠</span>
+                        <span>Inicio</span>
+                    </a></li>
+                    <li><a href="medico-pacientes.html" class="nav-link">
+                        <span class="icon">👥</span>
+                        <span>Pacientes</span>
+                    </a></li>
+                    <li><a href="medico-agregar.html" class="nav-link">
+                        <span class="icon">➕</span>
+                        <span>Agregar Paciente</span>
+                    </a></li>
+                    <li><a href="medico-sintomas.html" class="nav-link">
+                        <span class="icon">📋</span>
+                        <span>Gestión de Síntomas</span>
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="../index.html" class="nav-link logout">
+                    <span class="icon">🚪</span>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <div class="content-frame">
+                <iframe src="medico-inicio.html" frameborder="0" width="100%" height="100%"></iframe>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Portal del Paciente</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="frame-body patient-frame">
+    
+    <div class="welcome-section">
+        <h1 id="nombre"></h1>
+        <p class="welcome-subtitle">Tu sistema de diagnóstico inteligente está listo para ayudarte</p>
+    </div>
+    
+    <div class="patient-dashboard">
+        <div class="dashboard-card primary-action">
+            <div class="card-icon">🔍</div>
+            <div class="card-content">
+                <h2>Comenzar Nueva Evaluación</h2>
+                <p>Describe tus síntomas y obtén un diagnóstico preliminar</p>
+                <a href="paciente-evaluar.html" class="btn btn-primary">Evaluar Síntomas</a>
+            </div>
+        </div>
+        
+        <div class="dashboard-stats">
+            <div class="stat-card compact">
+                <img src="img/doc.png" style="width: 500px; height: 300px;" />
+            </div>
+        </div>
+    </div>
+    
+    <div class="tips-section">
+        <h2>Consejos de Salud</h2>
+        <div class="tips-grid">
+            <div class="tip-card">
+                <div class="tip-icon">💧</div>
+                <h3>Mantente Hidratado</h3>
+                <p>Bebe al menos 8 vasos de agua al día para mantener tu cuerpo funcionando correctamente.</p>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-icon">🏃</div>
+                <h3>Ejercicio Regular</h3>
+                <p>30 minutos de actividad física diaria pueden mejorar significativamente tu salud.</p>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-icon">😴</div>
+                <h3>Duerme Bien</h3>
+                <p>Un descanso de 7-8 horas es esencial para la recuperación y el bienestar general.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const nombre = document.getElementById('nombre');
+    user = JSON.parse(localStorage.getItem('currentUser'));
+    nombre.textContent = `¡Bienvenido ${user.name}!`; 
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal del Paciente - Clínica Digital</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="patient-body">
+    <header class="patient-header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">🏥</div>
+                <span>Clínica Digital</span>
+            </div>
+            
+            <nav class="patient-nav">
+                <a href="paciente-inicio.html" class="nav-link active">Inicio</a>
+                <a href="paciente-evaluar.html" class="nav-link">Evaluar Síntomas</a>
+                <a href="paciente-evaluaciones.html" class="nav-link">Mis Evaluaciones</a>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="user-info">
+                    <span id="nombre"></span>
+                </div>
+                <a href="../index.html" class="btn btn-outline btn-sm">Cerrar Sesión</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="patient-main">
+        <div class="content-frame">
+            <iframe src="paciente-inicio.html" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+    </main>
+</body>
+
+<script>
+    const nombre = document.getElementById('nombre');
+    user = JSON.parse(localStorage.getItem('currentUser'));
+    nombre.textContent = `¡Bienvenido ${user.name}!`; 
+</script>
+</html>

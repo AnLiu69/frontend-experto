@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Evaluaciones</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="frame-body patient-frame">
+    <div class="page-header">
+        <h1>Mis Evaluaciones</h1>
+        <p>Historial completo de tus diagnósticos y evaluaciones</p>
+    </div>
+    
+    <div class="evaluations-summary">
+        <div class="summary-stats">
+            <div class="summary-card">
+                <h3>7</h3>
+                <p>Total de evaluaciones</p>
+            </div>
+            <div class="summary-card">
+                <h3>94%</h3>
+                <p>Precisión promedio</p>
+            </div>
+            <div class="summary-card">
+                <h3>5</h3>
+                <p>Diagnósticos únicos</p>
+            </div>
+        </div>
+        
+        <div class="summary-actions">
+            <a href="paciente-evaluar.html" class="btn btn-primary">Nueva Evaluación</a>
+        </div>
+    </div>
+    
+    <div class="evaluations-filters">
+        <div class="filter-group">
+            <label>Período:</label>
+            <select id="periodFilter">
+                <option value="all">Todas</option>
+                <option value="week">Esta semana</option>
+                <option value="month">Este mes</option>
+                <option value="quarter">Último trimestre</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label>Diagnóstico:</label>
+            <select id="diagnosisFilter">
+                <option value="all">Todos</option>
+                <option value="resfriado">Resfriado común</option>
+                <option value="migraña">Migraña</option>
+                <option value="gastritis">Gastritis</option>
+                <option value="gripe">Gripe</option>
+            </select>
+        </div>
+        
+        <div class="search-box">
+            <input type="text" id="searchEvaluations" placeholder="Buscar evaluaciones...">
+            <span class="search-icon">🔍</span>
+        </div>
+    </div>
+    
+    <div class="evaluations-list" id="evaluationsList">
+        <div class="evaluation-card detailed">
+            <div class="evaluation-header">
+                <div class="evaluation-date">
+                    <span class="date">Hoy, 15 Enero 2025</span>
+                    <span class="time">14:30</span>
+                </div>
+                <div class="evaluation-status">
+                    <span class="confidence-badge high">92% confianza</span>
+                </div>
+            </div>
+            
+            <div class="evaluation-body">
+                <div class="diagnosis-section">
+                    <h3>🤧 Resfriado común</h3>
+                    <p class="diagnosis-description">Infección viral del tracto respiratorio superior que causa congestión nasal, estornudos y malestar general.</p>
+                </div>
+                
+                <div class="symptoms-section">
+                    <h4>Síntomas reportados:</h4>
+                    <div class="symptoms-tags">
+                        <span class="symptom-tag">Congestión nasal</span>
+                        <span class="symptom-tag">Estornudos</span>
+                        <span class="symptom-tag">Dolor de garganta</span>
+                        <span class="symptom-tag">Fatiga leve</span>
+                    </div>
+                </div>
+                
+                <div class="recommendations-section">
+                    <h4>Recomendaciones:</h4>
+                    <ul class="recommendations-list">
+                        <li>Mantente hidratado bebiendo abundante líquido</li>
+                        <li>Descansa lo suficiente para ayudar a tu cuerpo a recuperarse</li>
+                        <li>Considera usar un humidificador para aliviar la congestión</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="evaluation-footer">
+                <button class="btn btn-sm btn-outline" onclick="viewDetails('eval-001')">Ver Detalles Completos</button>
+                <button class="btn btn-sm btn-secondary" onclick="downloadReport('eval-001')">Descargar Reporte</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal de Detalles Completos -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2>Detalles Completos de la Evaluación</h2>
+                <button class="modal-close" onclick="closeDetailsModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="detailsContent">
+                <!-- Contenido dinámico -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeDetailsModal()">Cerrar</button>
+                <button class="btn btn-primary" onclick="downloadDetailedReport()">Descargar Reporte Completo</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/config.js"></script>
+    <script src="js/paciente-evaluaciones.js"></script>
+</body>
+</html>

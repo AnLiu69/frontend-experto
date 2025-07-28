@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Síntomas</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="frame-body">
+    <div class="page-header">
+        <h1>Gestión de Síntomas</h1>
+        <p>Administra el catálogo de síntomas del sistema</p>
+    </div>
+    
+    <div class="actions-bar">
+        <button class="btn btn-primary" onclick="openAddSymptomModal()">
+            <span class="icon">➕</span>
+            Agregar Nuevo Síntoma
+        </button>
+        <div class="search-box">
+            <input type="text" id="symptomSearch" placeholder="Buscar síntomas...">
+            <span class="search-icon">🔍</span>
+        </div>
+    </div>
+    
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Síntoma</th>
+                    <th>Categoría</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="symptomsTable">
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Modal Agregar/Editar Síntoma -->
+    <div id="symptomModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Agregar Nuevo Síntoma</h2>
+                <button class="modal-close" onclick="closeSymptomModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="symptomForm">
+                    <div class="form-group">
+                        <label for="symptomName">Nombre del Síntoma *</label>
+                        <input type="text" id="symptomName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="symptomCategory">Categoría *</label>
+                        <select id="symptomCategory" required>
+                            <option value="">Seleccionar categoría</option>
+                            <option value="general">General</option>
+                            <option value="digestive">Digestivo</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeSymptomModal()">Cancelar</button>
+                <button class="btn btn-primary" onclick="saveSymptom()">Guardar</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal de Confirmación de Eliminación -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header danger">
+                <h2>Confirmar Eliminación</h2>
+                <button class="modal-close" onclick="closeDeleteModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas eliminar este síntoma?</p>
+                <p><strong>Esta acción no se puede deshacer.</strong></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeDeleteModal()">Cancelar</button>
+                <button class="btn btn-danger" onclick="confirmDelete()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/config.js"></script>
+    <script src="js/medico-sintomas.js"></script>
+</body>
+</html>

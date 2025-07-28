@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pacientes</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="frame-body">
+    <div class="page-header">
+        <h1>Lista de Pacientes</h1>
+        <p>Gestiona y visualiza información de todos los pacientes</p>
+    </div>
+    
+    <div class="filters-section">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar por nombre o ID...">
+            <span class="search-icon">🔍</span>
+        </div>
+    </div>
+    
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="patientsTable">
+
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Modal de Detalles del Paciente -->
+    <div id="patientModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Detalles del Paciente</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="patientDetails">
+                <!-- Contenido dinámico -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/config.js"></script>
+    <script src="js/medico-pacientes.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Panel Médico</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="frame-body">
+    <div class="page-header">
+        <h1>Panel Médico</h1>
+        <p id="medico"></p>
+    </div>
+    
+    <div class="dashboard-content">
+        
+        <div class="dashboard-section">
+            <h2>Accesos Rápidos</h2>
+            <div class="quick-actions">
+                <a href="medico-agregar.html" class="quick-action">
+                    <span class="action-icon">➕</span>
+                    <span>Agregar Paciente</span>
+                </a>
+                <a href="medico-pacientes.html" class="quick-action">
+                    <span class="action-icon">👥</span>
+                    <span>Ver Pacientes</span>
+                </a>
+                <a href="medico-reporte.html" class="quick-action">
+                    <span class="action-icon">📋</span>
+                    <span>Gestion de Síntomas</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const nombre = document.getElementById('medico');
+    user = JSON.parse(localStorage.getItem('currentUser'));
+    nombre.textContent = `¡Bienvenido ${user.name}!`; 
+</script>
+
+</html>

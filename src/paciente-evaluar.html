@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluar Síntomas</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="frame-body patient-frame">
+    <div class="page-header">
+        <h1>Evaluación de Síntomas</h1>
+        <p>Selecciona los síntomas que experimentas actualmente</p>
+    </div>
+    
+    <div class="evaluation-container">
+        <div class="evaluation-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-text" id="progressText">0 síntomas seleccionados</span>
+        </div>
+        
+        <form id="symptomsForm" class="symptoms-form">
+            <div class="symptoms-categories">
+                <div class="category-section">
+                    <h3>Síntomas Generales</h3>
+                    <div class="symptoms-grid">
+                        <div class="symptom-item">
+                            <input type="checkbox" id="perdida-peso" name="symptoms" value="perdida-peso">
+                            <label for="perdida-peso">
+                                <span class="symptom-name">Pérdida de Peso</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('perdida-peso')">ℹ️</button>
+                            </label>
+                        </div>
+                        
+                        <div class="symptom-item">
+                            <input type="checkbox" id="anemia" name="symptoms" value="anemia">
+                            <label for="anemia">
+                                <span class="symptom-name">Anemia</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('anemia')">ℹ️</button>
+                            </label>
+                        </div>
+                        
+                        <div class="symptom-item">
+                            <input type="checkbox" id="malestar-debilidad" name="symptoms" value="malestar-debilidad">
+                            <label for="malestar-debilidad">
+                                <span class="symptom-name">Malestar general / Debilidad</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('malestar-debilidad')">ℹ️</button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-section">
+                    <h3>Síntomas Digestivos</h3>
+                    <div class="symptoms-grid">
+                        <div class="symptom-item">
+                            <input type="checkbox" id="dolor-epigastrio" name="symptoms" value="dolor-epigastrio">
+                            <label for="dolor-epigastrio">
+                                <span class="symptom-name">Dolor o ardor en epigastrio</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('dolor-epigastrio')">ℹ️</button>
+                            </label>
+                        </div>
+                        
+                        <div class="symptom-item">
+                            <input type="checkbox" id="nauseas" name="symptoms" value="nauseas">
+                            <label for="nauseas">
+                                <span class="symptom-name">Náuseas</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('nauseas')">ℹ️</button>
+                            </label>
+                        </div>
+                        
+                        <div class="symptom-item">
+                            <input type="checkbox" id="vomitos" name="symptoms" value="vomitos">
+                            <label for="vomitos">
+                                <span class="symptom-name">Vómitos</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('vomitos')">ℹ️</button>
+                            </label>
+                        </div>
+                        
+                        <div class="symptom-item">
+                            <input type="checkbox" id="dolor-comida" name="symptoms" value="dolor-comida">
+                            <label for="dolor-comida">
+                                <span class="symptom-name">Dolor que cambia con la comida</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('dolor-comida')">ℹ️</button>
+                            </label>
+                        </div>
+
+                        <div class="symptom-item">
+                            <input type="checkbox" id="llenura-precoz" name="symptoms" value="llenura-precoz">
+                            <label for="llenura-precoz">
+                                <span class="symptom-name">Sensación de llenura precoz</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('llenura-precoz')">ℹ️</button>
+                            </label>
+                        </div>
+
+                        <div class="symptom-item">
+                            <input type="checkbox" id="saciedad-precoz" name="symptoms" value="saciedad-precoz">
+                            <label for="saciedad-precoz">
+                                <span class="symptom-name">Saciedad precoz persistente</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('saciedad-precoz')">ℹ️</button>
+                            </label>
+                        </div>
+
+                        <div class="symptom-item">
+                            <input type="checkbox" id="hipo-persistente" name="symptoms" value="hipo-persistente">
+                            <label for="hipo-persistente">
+                                <span class="symptom-name">Hipo persistente</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('hipo-persistente')">ℹ️</button>
+                            </label>
+                        </div>
+
+                        <div class="symptom-item">
+                            <input type="checkbox" id="eructos-frecuentes" name="symptoms" value="eructos-frecuentes">
+                            <label for="eructos-frecuentes">
+                                <span class="symptom-name">Eructos frecuentes</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('eructos-frecuentes')">ℹ️</button>
+                            </label>
+                        </div>
+
+                        <div class="symptom-item">
+                            <input type="checkbox" id="distension-postprandial" name="symptoms" value="distension-postprandial">
+                            <label for="distension-postprandial">
+                                <span class="symptom-name">Distensión abdominal postprandial</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('distension-postprandial')">ℹ️</button>
+                            </label>
+                        </div>
+
+                        <div class="symptom-item">
+                            <input type="checkbox" id="hemorragia-digestiva" name="symptoms" value="hemorragia-digestiva">
+                            <label for="hemorragia-digestiva">
+                                <span class="symptom-name">Hemorragia digestiva</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('hemorragia-digestiva')">ℹ️</button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-section">
+                    <h3>Síntomas de Reflujo y Gástricos</h3>
+                    <div class="symptoms-grid">
+                        <div class="symptom-item">
+                            <input type="checkbox" id="regurgitacion-acida" name="symptoms" value="regurgitacion-acida">
+                            <label for="regurgitacion-acida">
+                                <span class="symptom-name">Regurgitación ácida</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('regurgitacion-acida')">ℹ️</button>
+                            </label>
+                        </div>
+                        
+                        <div class="symptom-item">
+                            <input type="checkbox" id="pirosis" name="symptoms" value="pirosis">
+                            <label for="pirosis">
+                                <span class="symptom-name">Pirosis (ardor retroesternal)</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('pirosis')">ℹ️</button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-section">
+                    <h3>Síntomas Respiratorios / Torácicos</h3>
+                    <div class="symptoms-grid">
+                        <div class="symptom-item">
+                            <input type="checkbox" id="tos-seca" name="symptoms" value="tos-seca">
+                            <label for="tos-seca">
+                                <span class="symptom-name">Tos seca</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('tos-seca')">ℹ️</button>
+                            </label>
+                        </div>
+                        
+                        <div class="symptom-item">
+                            <input type="checkbox" id="dolor-toracico" name="symptoms" value="dolor-toracico">
+                            <label for="dolor-toracico">
+                                <span class="symptom-name">Dolor torácico</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('dolor-toracico')">ℹ️</button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <h3>Síntoma de Tracto Digestivo Superior</h3>
+                    <div class="symptoms-grid">
+                        <div class="symptom-item">
+                            <input type="checkbox" id="disfagia" name="symptoms" value="disfagia">
+                            <label for="disfagia">
+                                <span class="symptom-name">Dificultad para tragar (Disfagia)</span>
+                                <button type="button" class="info-btn" onclick="showSymptomInfo('disfagia')">ℹ️</button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="evaluation-actions">
+                <button type="button" class="btn btn-secondary" onclick="clearSelection()">Limpiar Selección</button>
+                <button type="submit" class="btn btn-primary" id="evaluateBtn" disabled>Evaluar Síntomas</button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Modal de Información del Síntoma -->
+    <div id="symptomInfoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="symptomInfoTitle">Información del Síntoma</h2>
+                <button class="modal-close" onclick="closeSymptomInfo()">&times;</button>
+            </div>
+            <div class="modal-body" id="symptomInfoContent">
+                <!-- Contenido dinámico -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal de Resultado del Diagnóstico -->
+    <div id="diagnosisModal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header success">
+                <h2>🎯 Diagnóstico Completado</h2>
+                <button class="modal-close" onclick="closeDiagnosisModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="diagnosisContent">
+                <!-- Contenido dinámico del diagnóstico -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeDiagnosisModal()">Cerrar</button>
+                <a href="paciente-evaluaciones.html" class="btn btn-primary">Ver Mis Evaluaciones</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/config.js"></script>
+    <script src="js/paciente-evaluar.js"></script>
+</body>
+</html>
