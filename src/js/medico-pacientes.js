@@ -47,5 +47,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Renderizar tabla inicial
     loadPatientsFromBackend();
 });
-
-document.head.insertAdjacentHTML('beforeend', additionalStyles);
