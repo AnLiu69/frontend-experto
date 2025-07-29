@@ -1,1 +1,1 @@
-const API_URL_KEY = 'https://backend-experto-production-4e66.up.railway.app/';
+const API_URL_KEY = 'https://backend-experto-production-4e66.up.railway.app';
